@@ -6,7 +6,7 @@ import pymysql, boto3
 
 def lambda_handler(event, context):
     ssm = boto3.client("ssm")
-
+    #creating aws client
     table_name = event["TableName"]
     database = ssm.get_parameter(
         Name="mysql-staging-db-name", WithDecryption=True
